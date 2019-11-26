@@ -1,10 +1,10 @@
 package com.company.existences;
 
+import com.company.special.ObjectWithCoordinates;
+
 import java.util.Objects;
 
-public abstract class Existence {
-    private int x;
-    private int y;
+public abstract class Existence extends ObjectWithCoordinates {
     private int health;
 
     public Existence(int x, int y) {
@@ -12,22 +12,15 @@ public abstract class Existence {
     }
 
     public Existence(int x, int y, int health) {
-        this.x = x;
-        this.y = y;
+        super(x, y);
         this.health = health;
     }
 
-    public int getX() {
-        return this.x;
-    }
 
-    public int getY() {
-        return this.y;
-    }
 
     public void setCoords(int x, int y) {
-        this.x = x;
-        this.y = y;
+        this.setX(x);
+        this.setY(y);
     }
 
     public int getHealth() {
@@ -54,15 +47,14 @@ public abstract class Existence {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Existence existence = (Existence) o;
-        return x == existence.x &&
-                y == existence.y &&
-                health == existence.health;
+        return health == existence.health;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y, health);
+        return Objects.hash(super.hashCode(), health);
     }
 }
 

@@ -6,6 +6,7 @@ public class Item {
     private int weight;
     private String description;
     private int frazzle;
+    private boolean isWeared = false;
 
     public Item(int weight, String description) {
         this.weight = weight;
@@ -21,13 +22,23 @@ public class Item {
         return this.description;
     }
 
-
-
-    public void addFrazzle(){
-        this.frazzle+=1;
+    public void setWeared() {
+        this.isWeared = true;
     }
 
-    public void removeFrazzle(){
+    public void setUnweared() {
+        this.isWeared = false;
+    }
+
+    public boolean getIsWeared() {
+        return this.isWeared;
+    }
+
+    public void addFrazzle() {
+        this.frazzle += 1;
+    }
+
+    public void removeFrazzle() {
         this.frazzle = 0;
     }
 
@@ -43,6 +54,7 @@ public class Item {
         Item item = (Item) o;
         return weight == item.weight &&
                 frazzle == item.frazzle &&
+                isWeared == item.isWeared &&
                 Objects.equals(description, item.description);
     }
 

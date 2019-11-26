@@ -1,40 +1,16 @@
 package com.company.technics;
 
+import com.company.special.ObjectWithCoordinates;
+
 import java.util.Objects;
 
-public class Technic {
-    private int x;
-    private int y;
-
-    Technic(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
+public class Technic extends ObjectWithCoordinates {
+    public Technic(int x, int y){
+        super(x, y);
     }
 
     @Override
     public String toString() {
-        return (this.getClass().getSimpleName());
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Technic technic = (Technic) o;
-        return x == technic.x &&
-                y == technic.y;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(x, y);
+        return ("Техника");
     }
 }

@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class MapController {
-    private Object[][] objMap;
+    private ObjectWithCoordinates[][] objMap;
     private Tile[][] tileMap;
     private int sizeW;
     private int sizeH;
@@ -21,14 +21,14 @@ public class MapController {
     public MapController(int sizeW, int sizeH) {
         this.sizeW = sizeW;
         this.sizeH = sizeH;
-        this.objMap = new Object[sizeW][sizeH];
+        this.objMap = new ObjectWithCoordinates[sizeW][sizeH];
         this.tileMap = new Tile[sizeW][sizeH];
         for (int i = 0; i < sizeW; i++) {
             for (int j = 0; j < sizeH; j++) {
                 //objMap[i][j] = null;
-                tileMap[i][j] = Tile.SPACE;
+                this.tileMap[i][j] = Tile.SPACE;
                 if (i <= 4 && j <= 6) {
-                    tileMap[i][j] = Tile.FLOOR;
+                    this.tileMap[i][j] = Tile.FLOOR;
                 }
             }
         }
@@ -42,23 +42,20 @@ public class MapController {
         return sizeH;
     }
 
-    public void placeObjOnMap(Object obj, int x, int y) {
+    public void placeObjOnMap(ObjectWithCoordinates obj, int x, int y) {
         this.objMap[x][y] = obj;
         System.out.println(obj.toString() + " был добавлен на карту");
     }
 
 
-    public void placeObjOnMap(Existence existence) {
-        this.objMap[existence.getX()][existence.getY()] = existence;
-        System.out.println(existence.toString() + " был добавлен на карту");
+    public void placeObjOnMap(ObjectWithCoordinates object) {
+        this.objMap[object.getX()][object.getY()] = object;
+        System.out.println(object.toString() + " был добавлен на карту");
     }
 
-    public void placeObjOnMap(Technic technic) {
-        this.objMap[technic.getX()][technic.getY()] = technic;
-        System.out.println(technic.toString() + " был добавлен на карту");
-    }
 
-    public Object getObjByCoordinate(int x, int y) {
+
+    public ObjectWithCoordinates getObjByCoordinate(int x, int y) {
         return this.objMap[x][y];
     }
 
@@ -67,15 +64,46 @@ public class MapController {
     }
 
     public void moveObj(int x, int y, int aimX, int aimY) {
-        Object o = this.getObjByCoordinate(x, y);
+        ObjectWithCoordinates o = this.getObjByCoordinate(x, y);
+
         this.objMap[aimX][aimY] = o;
-        this.objMap[x][y] = 0;
+        this.objMap[x][y] = null;
     }
 
     public void deleteObjFromMap(int x, int y) {
         this.objMap[x][y] = null;
     }
 
+    public void printMap(){
+
+        String s = "Map:\n";
+        for (int i = this.sizeH-1; i >= 0; i--) {
+            for (int j = 0; j < this.sizeW; j++) {
+                String c = " ";
+                Object obj = this.getObjByCoordinate(j, i);
+                Tile tile = this.getTileByCoordinate(j, i);
+                if (obj != null) {
+                    c = ""+obj.getClass().getSimpleName().toCharArray()[0];
+                } else {
+                    switch (tile){
+                        case FLOOR:
+                            c ="⬜";
+                            break;
+                        case SPACE:
+                            c = ".";
+                            break;
+                        case WALL:
+                            c ="⬛";
+                            break;
+                    };
+                }
+                s += c;
+
+            }
+            s+="\n";
+        }
+        System.out.println(s);
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -97,24 +125,7 @@ public class MapController {
     }
 
     @Override
-    public String toString() {/*
-        String s = "Map:\n";
-        for (int i = 0; i < this.sizeH; i++) {
-            for (int j = 0; j < this.sizeW; j++) {
-                String c = " ";
-                Object obj = this.getObjByCoordinate(j, i);
-                Tile tile = this.getTileByCoordinate(j, i);
-                if (obj != null) {
-                    c = obj.toString();
-                } else {
-                    c = tile.toString();
-                }
-                s += c;
-
-            }
-            s+="\n";
-        }
-        return s;*/
+    public String toString() {
 
         return ("Карта мира " + this.sizeW + "x" + this.sizeH);
     }

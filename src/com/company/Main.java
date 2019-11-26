@@ -40,6 +40,8 @@ public class Main {
         map.placeObjOnMap(seledochka);
         map.placeObjOnMap(znayka);
 
+        map.printMap();
+
         System.out.println();
 
         seledochka.move(Direction.RIGHT, map);
@@ -76,9 +78,14 @@ public class Main {
         shpuntik.checkTask();
         fuksia.checkTask();
         seledochka.checkTask();
-
-
         System.out.println();
+        znayka.wearItem(spacesuit4);
+        seledochka.unwearItem();
+        znayka.wearItem(spacesuit4);
+        seledochka.move(Direction.RIGHT, map);
+        seledochka.wearItem(spacesuit4);
+        System.out.println();
+
 
         znayka.comand(vintik, "разведать ракету");
         znayka.comand(shpuntik, "разведать ракету");
@@ -86,10 +93,18 @@ public class Main {
         znayka.comand(seledochka, "разведать ракету");
 
         seledochka.move(Direction.RIGHT, map);
+        map.printMap();
         seledochka.move(Direction.UP, map);
+        map.printMap();
         seledochka.checkTask();
         seledochka.move(Direction.UP, map);
         seledochka.checkTask();
 
+
+        map.printMap();
+        nip.loadInCrew(seledochka, map);
+        map.printMap();
+        nip.unloadFromCrew(map);
+        map.printMap();
     }
 }
