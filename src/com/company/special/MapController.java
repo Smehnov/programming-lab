@@ -5,6 +5,9 @@ import com.company.existences.Existence;
 import com.company.existences.Gnome;
 import com.company.technics.Technic;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class MapController {
     private Object[][] objMap;
     private Tile[][] tileMap;
@@ -71,6 +74,26 @@ public class MapController {
 
     public void deleteObjFromMap(int x, int y) {
         this.objMap[x][y] = null;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MapController that = (MapController) o;
+        return sizeW == that.sizeW &&
+                sizeH == that.sizeH &&
+                Arrays.equals(objMap, that.objMap) &&
+                Arrays.equals(tileMap, that.tileMap);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(sizeW, sizeH);
+        result = 31 * result + Arrays.hashCode(objMap);
+        result = 31 * result + Arrays.hashCode(tileMap);
+        return result;
     }
 
     @Override

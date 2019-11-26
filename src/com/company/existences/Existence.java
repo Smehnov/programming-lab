@@ -1,5 +1,7 @@
 package com.company.existences;
 
+import java.util.Objects;
+
 public abstract class Existence {
     private int x;
     private int y;
@@ -48,5 +50,19 @@ public abstract class Existence {
         return "существо";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Existence existence = (Existence) o;
+        return x == existence.x &&
+                y == existence.y &&
+                health == existence.health;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y, health);
+    }
 }
 

@@ -6,6 +6,8 @@ import com.company.items.Spacesuit;
 import com.company.special.MapController;
 import com.company.technics.Rocket;
 
+import java.util.Objects;
+
 public class Gnome extends Existence implements Movable {
 
     private boolean isCosmonaut;
@@ -120,4 +122,24 @@ public class Gnome extends Existence implements Movable {
     public String toString() {
         return this.getClass().getSimpleName() + " " + this.getName();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Gnome gnome = (Gnome) o;
+        return isCosmonaut == gnome.isCosmonaut &&
+                meetedRocked == gnome.meetedRocked &&
+                Objects.equals(wearedItem, gnome.wearedItem) &&
+                Objects.equals(name, gnome.name) &&
+                Objects.equals(current_task, gnome.current_task);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), isCosmonaut, wearedItem, name, current_task, meetedRocked);
+    }
 }
+
+
