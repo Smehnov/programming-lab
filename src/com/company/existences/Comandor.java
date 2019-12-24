@@ -9,8 +9,7 @@ public class Comandor extends Gnome{
         super(x, y);
     }
 
-    public void comand(Gnome executor, String task){
+    public void comand(Executor executor, String task){
         executor.takeTask(task, this);
-        //System.out.println(this.toString() + " дал "+executor.toString()+" задание: "+task);
     }
 }

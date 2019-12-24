@@ -27,6 +27,11 @@ public abstract class ObjectWithCoordinates {
         this.y = y;
     }
 
+    public void setCoords(int x, int y) {
+        this.setX(x);
+        this.setY(y);
+    }
+
     @Override
     public String toString() {
         return "Объект с координатами{" +

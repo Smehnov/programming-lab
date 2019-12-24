@@ -1,11 +1,13 @@
 package com.company.existences;
 
+import com.company.items.Food;
 import com.company.special.ObjectWithCoordinates;
 
 import java.util.Objects;
 
 public abstract class Existence extends ObjectWithCoordinates {
     private int health;
+
 
     public Existence(int x, int y) {
         this(x, y, 100);
@@ -16,12 +18,6 @@ public abstract class Existence extends ObjectWithCoordinates {
         this.health = health;
     }
 
-
-
-    public void setCoords(int x, int y) {
-        this.setX(x);
-        this.setY(y);
-    }
 
     public int getHealth() {
         return this.health;
@@ -37,6 +33,11 @@ public abstract class Existence extends ObjectWithCoordinates {
             this.health = 100;
         }
     }
+
+    public void eat(Food food) {
+        System.out.println("Съедено " + food.getName() + " с энергией " + food.getEnergy());
+    }
+
 
     @Override
     public String toString() {

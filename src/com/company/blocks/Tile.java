@@ -3,7 +3,8 @@ package com.company.blocks;
 public enum Tile {
     SPACE("Космос"),
     WALL("Стена"),
-    FLOOR("Пол");
+    FLOOR("Пол"),
+    MOONSEA("Пол");
     private final String tileDescription;
 
     private Tile(String desc) {

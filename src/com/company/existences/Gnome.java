@@ -1,6 +1,7 @@
 package com.company.existences;
 
 import com.company.blocks.Tile;
+import com.company.exceptions.CoordinatesOutOfMap;
 import com.company.items.Item;
 import com.company.items.Spacesuit;
 import com.company.special.MapController;
@@ -8,13 +9,13 @@ import com.company.technics.Rocket;
 
 import java.util.Objects;
 
-public class Gnome extends Existence implements Movable {
+public class Gnome extends Existence implements Movable, Executor {
 
     private boolean isCosmonaut;
     private Item wearedItem;
     private String name;
     private String currentTask = "";
-    private boolean meetedRocked;
+    private boolean meetedRocket;
 
     public Gnome(int x, int y) {
         this(x, y, "Безымянный");
@@ -42,19 +43,19 @@ public class Gnome extends Existence implements Movable {
 
     public void wearItem(Item item) {
         if (!this.hasWearedItem()) {
-            if(!item.getIsWeared()) {
+            if (!item.getIsWeared()) {
                 if (!(item instanceof Spacesuit) || this.isCosmonaut) {
                     this.wearedItem = item;
                     item.setWeared();
                     System.out.println(this.toString() + " надел предмет " + item.toString());
-                }else{
-                    System.out.println(this.toString()+" не космонавт");
+                } else {
+                    System.out.println(this.toString() + " не космонавт");
                 }
-            }else{
+            } else {
                 System.out.println(item.toString() + " уже используется");
             }
         } else {
-            System.out.println(this.toString()+" уже носит "+this.getWearedItem());
+            System.out.println(this.toString() + " уже носит " + this.getWearedItem());
         }
     }
 
@@ -75,19 +76,11 @@ public class Gnome extends Existence implements Movable {
     }
 
     public void checkTask() {
-        switch (this.currentTask) {
-            case "надеть скафандр":
-                if (this.wearedItem instanceof Spacesuit) {
-                    System.out.println(this.toString() + " выполнил задание " + this.currentTask);
-                    this.currentTask = "";
-                } else System.out.println(this.toString() + " НЕ выполнил задание " + this.currentTask);
-                break;
-            case "разведать ракету":
-                if (meetedRocked) {
-                    System.out.println(this.toString() + " выполнил задание " + this.currentTask);
-                    this.currentTask = "";
-                } else System.out.println(this.toString() + " НЕ выполнил задание " + this.currentTask);
-                break;
+        if ("надеть скафандр".equals(this.currentTask)) {
+            if (this.wearedItem instanceof Spacesuit) {
+                System.out.println(this.toString() + " выполнил задание " + this.currentTask);
+                this.currentTask = "";
+            } else System.out.println(this.toString() + " НЕ выполнил задание " + this.currentTask);
         }
     }
 
@@ -108,9 +101,8 @@ public class Gnome extends Existence implements Movable {
                 aimX++;
                 break;
         }
-        if (aimX < 0 || aimX >= map.getSizeW() || aimY < 0 || aimY > map.getSizeH()) {
-            System.out.println("ЭЭЭЭЙ, КУДА ПАШОЛ?????");
-        } else {
+
+        try {
             Object obj = map.getObjByCoordinate(aimX, aimY);
             Tile tile = map.getTileByCoordinate(aimX, aimY);
             if (obj != null) {
@@ -119,8 +111,9 @@ public class Gnome extends Existence implements Movable {
                 System.out.println("Ход " + this.toString() + " невозможен, на пути стоит " + tile.toString());
 
             } else if (tile == Tile.FLOOR) {
-                this.setCoords(aimX, aimY);
                 map.moveObj(this.getX(), this.getY(), aimX, aimY);
+                this.setCoords(aimX, aimY);
+
                 System.out.println(this.toString() + " переместился на точку (" + aimX + ";" + aimY + ")");
 
             } else if (tile == Tile.SPACE) {
@@ -136,9 +129,11 @@ public class Gnome extends Existence implements Movable {
             int x = this.getX();
             int y = this.getY();
             if (map.getObjByCoordinate(x + 1, y) instanceof Rocket || map.getObjByCoordinate(x - 1, y) instanceof Rocket || map.getObjByCoordinate(x, y + 1) instanceof Rocket || map.getObjByCoordinate(x, y - 1) instanceof Rocket) {
-                this.meetedRocked = true;
+                this.meetedRocket = true;
             }
 
+        } catch (CoordinatesOutOfMap e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -155,7 +150,7 @@ public class Gnome extends Existence implements Movable {
         if (!super.equals(o)) return false;
         Gnome gnome = (Gnome) o;
         return isCosmonaut == gnome.isCosmonaut &&
-                meetedRocked == gnome.meetedRocked &&
+                meetedRocket == gnome.meetedRocket &&
                 Objects.equals(wearedItem, gnome.wearedItem) &&
                 Objects.equals(name, gnome.name) &&
                 Objects.equals(currentTask, gnome.currentTask);
@@ -163,7 +158,7 @@ public class Gnome extends Existence implements Movable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), isCosmonaut, wearedItem, name, currentTask, meetedRocked);
+        return Objects.hash(super.hashCode(), isCosmonaut, wearedItem, name, currentTask, meetedRocket);
     }
 }
 

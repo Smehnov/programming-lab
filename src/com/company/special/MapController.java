@@ -1,9 +1,8 @@
 package com.company.special;
 
 import com.company.blocks.Tile;
+import com.company.exceptions.CoordinatesOutOfMap;
 import com.company.existences.Existence;
-import com.company.existences.Gnome;
-import com.company.technics.Technic;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -29,7 +28,10 @@ public class MapController {
                 this.tileMap[i][j] = Tile.SPACE;
                 if (i <= 4 && j <= 6) {
                     this.tileMap[i][j] = Tile.FLOOR;
+                } else if ((i > 5 && i <= 9) && (j < 8 && j > 4)) {
+                    this.tileMap[i][j] = Tile.MOONSEA;
                 }
+                this.tileMap[5][6] = Tile.FLOOR;
             }
         }
     }
@@ -54,7 +56,6 @@ public class MapController {
     }
 
 
-
     public ObjectWithCoordinates getObjByCoordinate(int x, int y) {
         return this.objMap[x][y];
     }
@@ -63,9 +64,13 @@ public class MapController {
         return this.tileMap[x][y];
     }
 
-    public void moveObj(int x, int y, int aimX, int aimY) {
-        ObjectWithCoordinates o = this.getObjByCoordinate(x, y);
+    public void moveObj(int x, int y, int aimX, int aimY) throws CoordinatesOutOfMap {
 
+        if (aimX < 0 || aimX >= this.getSizeW() || aimY < 0 || aimY > this.getSizeH()) {
+            throw new CoordinatesOutOfMap("Туда нельзя");
+        }
+
+        ObjectWithCoordinates o = this.getObjByCoordinate(x, y);
         this.objMap[aimX][aimY] = o;
         this.objMap[x][y] = null;
     }
@@ -74,33 +79,37 @@ public class MapController {
         this.objMap[x][y] = null;
     }
 
-    public void printMap(){
+    public void printMap() {
 
         String s = "Map:\n";
-        for (int i = this.sizeH-1; i >= 0; i--) {
+        for (int i = this.sizeH - 1; i >= 0; i--) {
             for (int j = 0; j < this.sizeW; j++) {
                 String c = " ";
                 Object obj = this.getObjByCoordinate(j, i);
                 Tile tile = this.getTileByCoordinate(j, i);
                 if (obj != null) {
-                    c = ""+obj.getClass().getSimpleName().toCharArray()[0];
+                    c = "" + obj.getClass().getSimpleName().toCharArray()[0];
                 } else {
-                    switch (tile){
+                    switch (tile) {
                         case FLOOR:
-                            c ="⬜";
+                            c = "⬜";
                             break;
                         case SPACE:
                             c = ".";
                             break;
                         case WALL:
-                            c ="⬛";
+                            c = "⬛";
                             break;
-                    };
+                        case MOONSEA:
+                            c = "~";
+                            break;
+                    }
+
                 }
                 s += c;
 
             }
-            s+="\n";
+            s += "\n";
         }
         System.out.println(s);
     }

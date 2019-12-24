@@ -1,8 +1,11 @@
 package com.company;
 
+import com.company.exceptions.GettingNotExistingItem;
 import com.company.existences.*;
+import com.company.items.Food;
 import com.company.items.Spacesuit;
 import com.company.special.MapController;
+import com.company.special.Squad;
 import com.company.technics.Rocket;
 
 public class Main {
@@ -11,8 +14,60 @@ public class Main {
         MapController map = new MapController();
         System.out.println(map);
 
+
         Rocket nip = new Rocket(5, 5, "НИП");
+        nip.spacesuitContainer.add(new Spacesuit());
+        nip.spacesuitContainer.add(new Spacesuit());
+        nip.spacesuitContainer.add(new Spacesuit());
+        nip.foodContainer.add(new Food("Борщ", 30));
+        nip.foodContainer.add(new Food("Котлеты", 40));
+        nip.foodContainer.add(new Food("Пюрешка", 10));
+
+
         map.placeObjOnMap(nip);
+
+
+        Gnome neznayka = new Gnome(6, 6, "Незнайка");
+        Gnome ponchick = new Gnome(6, 7, "Пончик");
+
+
+        nip.loadInCrew(neznayka, map);
+        nip.loadInCrew(ponchick, map);
+
+
+        map.printMap();
+
+
+        try {
+            while (true) {
+                neznayka.eat(nip.foodContainer.get());
+                ponchick.eat(nip.foodContainer.get());
+            }
+        } catch (GettingNotExistingItem e) {
+            System.out.println(e.getMessage());
+        }
+
+
+        nip.unloadFromCrew(map);
+        nip.unloadFromCrew(map);
+
+        neznayka.becomeCosmonaut();
+        ponchick.becomeCosmonaut();
+
+        try {
+            neznayka.wearItem(nip.spacesuitContainer.get());
+            ponchick.wearItem(nip.spacesuitContainer.get());
+        } catch (GettingNotExistingItem e) {
+            System.out.println(e.getMessage());
+        }
+
+
+        neznayka.move(Direction.LEFT, map);
+        ponchick.move(Direction.LEFT, map);
+        neznayka.move(Direction.LEFT, map);
+        ponchick.move(Direction.LEFT, map);
+        neznayka.move(Direction.LEFT, map);
+        ponchick.move(Direction.LEFT, map);
 
         Mechanic vintik = new Mechanic(1, 1, "Винтик");
         Mechanic shpuntik = new Mechanic(2, 1, "Шпунтик");
@@ -86,25 +141,26 @@ public class Main {
         seledochka.wearItem(spacesuit4);
         System.out.println();
 
-
-        znayka.comand(vintik, "разведать ракету");
-        znayka.comand(shpuntik, "разведать ракету");
-        znayka.comand(fuksia, "разведать ракету");
-        znayka.comand(seledochka, "разведать ракету");
-
-        seledochka.move(Direction.RIGHT, map);
-        map.printMap();
-        seledochka.move(Direction.UP, map);
-        map.printMap();
-        seledochka.checkTask();
-        seledochka.move(Direction.UP, map);
-        seledochka.checkTask();
-
+        Squad squad = new Squad(znayka);
+        znayka.comand(squad, "разведать ракету");
+        squad.addToSquad(znayka, map);
+        squad.addToSquad(vintik, map);
+        squad.addToSquad(shpuntik, map);
+        squad.addToSquad(fuksia, map);
+        squad.addToSquad(seledochka, map);
+        map.placeObjOnMap(squad);
 
         map.printMap();
-        nip.loadInCrew(seledochka, map);
+
+        squad.move(Direction.UP, map);
         map.printMap();
-        nip.unloadFromCrew(map);
+        squad.checkTask();
+        squad.move(Direction.UP, map);
+        squad.checkTask();
         map.printMap();
+
+
+
+
     }
 }
