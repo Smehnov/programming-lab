@@ -8,7 +8,7 @@ import com.company.technics.Rocket;
 
 import java.util.ArrayList;
 
-public class Squad extends ObjectWithCoordinates implements Movable, Executor{
+public class Squad extends ObjectWithCoordinates implements Movable, Executor {
 
     private ArrayList<Gnome> gnomes = new ArrayList<>();
     private String currentTask = "";
@@ -44,7 +44,7 @@ public class Squad extends ObjectWithCoordinates implements Movable, Executor{
         if (this.gnomes.size() > 0) {
             int x = this.getX();
             int y = this.getY();
-            Gnome gnome = this.gnomes.get(this.gnomes.size());
+            Gnome gnome = this.gnomes.get(this.gnomes.size() - 1);
             int aimX = x;
             int aimY = y;
             boolean canUnload = true;
@@ -65,7 +65,7 @@ public class Squad extends ObjectWithCoordinates implements Movable, Executor{
             }
 
             if (canUnload) {
-                this.gnomes.remove(this.gnomes.size());
+                this.gnomes.remove(this.gnomes.size() - 1);
                 gnome.setX(aimX);
                 gnome.setY(aimY);
                 map.placeObjOnMap(gnome, aimX, aimY);

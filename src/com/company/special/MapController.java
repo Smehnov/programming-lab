@@ -28,7 +28,7 @@ public class MapController {
                 this.tileMap[i][j] = Tile.SPACE;
                 if (i <= 4 && j <= 6) {
                     this.tileMap[i][j] = Tile.FLOOR;
-                } else if ((i > 5 && i <= 9) && (j < 8 && j > 4)) {
+                } else if ((i > 5 && i <= 15) && (j < 15 && j > 4)) {
                     this.tileMap[i][j] = Tile.MOONSEA;
                 }
                 this.tileMap[5][6] = Tile.FLOOR;

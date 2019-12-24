@@ -11,6 +11,8 @@ import com.company.technics.Rocket;
 public class Main {
 
     public static void main(String[] args) {
+
+
         MapController map = new MapController();
         System.out.println(map);
 
@@ -69,31 +71,47 @@ public class Main {
         neznayka.move(Direction.LEFT, map);
         ponchick.move(Direction.LEFT, map);
 
+        map.printMap();
+
+
         Mechanic vintik = new Mechanic(1, 1, "Винтик");
         Mechanic shpuntik = new Mechanic(2, 1, "Шпунтик");
         Professor zvezdochkin = new Professor(1, 2, "Звездочкин");
         Astronomer steklyashkin = new Astronomer(2, 2, "Стекляшкин");
         Engineer klepki = new Engineer(3, 1, "Клепка");
-        Architect cubiq = new Architect(3, 2, "Кубик");
+        Architect cubiq = new Architect(4, 3, "Кубик");
         Painter tubik = new Painter(1, 3, "Тюбик");
         Musicion gusli = new Musicion(2, 3, "Гусли");
         Doctor pilulkin = new Doctor(3, 3, "Пилюлькин");
         Gnome fuksia = new Gnome(4, 1, "Фуксия");
         Gnome seledochka = new Gnome(4, 2, "Селедочка");
-        Comandor znayka = new Comandor(4, 3, "Знайка");
+        Comandor znayka = new Comandor(3, 2, "Знайка");
 
-        map.placeObjOnMap(vintik);
-        map.placeObjOnMap(shpuntik);
-        map.placeObjOnMap(zvezdochkin);
-        map.placeObjOnMap(steklyashkin);
-        map.placeObjOnMap(klepki);
-        map.placeObjOnMap(cubiq);
-        map.placeObjOnMap(tubik);
-        map.placeObjOnMap(gusli);
-        map.placeObjOnMap(pilulkin);
-        map.placeObjOnMap(fuksia);
-        map.placeObjOnMap(seledochka);
-        map.placeObjOnMap(znayka);
+        Rocket fis = new Rocket(2, 2, "ФИС");
+
+        steklyashkin.findRocket(map);
+
+        fis.loadInCrew(vintik, map);
+        fis.loadInCrew(shpuntik, map);
+        fis.loadInCrew(zvezdochkin, map);
+        fis.loadInCrew(steklyashkin, map);
+        fis.loadInCrew(klepki, map);
+        fis.loadInCrew(cubiq, map);
+        fis.loadInCrew(tubik, map);
+        fis.loadInCrew(gusli, map);
+        fis.loadInCrew(pilulkin, map);
+        fis.loadInCrew(fuksia, map);
+        fis.loadInCrew(seledochka, map);
+        fis.loadInCrew(znayka, map);
+
+
+        steklyashkin.findRocket(map);
+
+        fis.electronicSelfRegulativeMachine.activateBreaks();
+
+
+        map.placeObjOnMap(fis);
+
 
         map.printMap();
 
@@ -107,6 +125,7 @@ public class Main {
         shpuntik.becomeCosmonaut();
         fuksia.becomeCosmonaut();
         seledochka.becomeCosmonaut();
+        znayka.becomeCosmonaut();
 
         System.out.println();
 
@@ -114,6 +133,7 @@ public class Main {
         Spacesuit spacesuit2 = new Spacesuit();
         Spacesuit spacesuit3 = new Spacesuit();
         Spacesuit spacesuit4 = new Spacesuit();
+        Spacesuit spacesuit5 = new Spacesuit();
 
         znayka.comand(vintik, "надеть скафандр");
         znayka.comand(shpuntik, "надеть скафандр");
@@ -126,7 +146,7 @@ public class Main {
         shpuntik.wearItem(spacesuit2);
         fuksia.wearItem(spacesuit3);
         seledochka.wearItem(spacesuit4);
-
+        znayka.wearItem(spacesuit5);
         System.out.println();
 
         vintik.checkTask();
@@ -141,13 +161,16 @@ public class Main {
         seledochka.wearItem(spacesuit4);
         System.out.println();
 
+
         Squad squad = new Squad(znayka);
-        znayka.comand(squad, "разведать ракету");
         squad.addToSquad(znayka, map);
         squad.addToSquad(vintik, map);
         squad.addToSquad(shpuntik, map);
         squad.addToSquad(fuksia, map);
         squad.addToSquad(seledochka, map);
+
+        znayka.comand(squad, "разведать ракету");
+
         map.placeObjOnMap(squad);
 
         map.printMap();
@@ -158,9 +181,19 @@ public class Main {
         squad.move(Direction.UP, map);
         squad.checkTask();
         map.printMap();
+        nip.loadInCrew(squad, map);
+        map.printMap();
 
 
+        if(!nip.isGnomeInRooms("Незнайка") && !nip.isGnomeInRooms("Пончик") && nip.foodContainer.isEmpty()){
+            System.out.println("Незнайки и Пончика нет ни в одной из комнат ракеты, еды тоже нет, значит она закончилась, и они отправились на ее поиски!");
+        }
+
+        nip.unloadFromCrew(map);
+        map.printMap();
 
 
     }
+
+
 }

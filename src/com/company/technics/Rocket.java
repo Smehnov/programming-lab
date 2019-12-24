@@ -2,6 +2,8 @@ package com.company.technics;
 
 import com.company.blocks.Tile;
 import com.company.exceptions.GettingNotExistingItem;
+import com.company.existences.Existence;
+import com.company.existences.Gnome;
 import com.company.items.Food;
 import com.company.items.Spacesuit;
 import com.company.special.MapController;
@@ -18,6 +20,80 @@ public class Rocket extends Technic {
     private ObjectWithCoordinates[] crew;
     public SpacesuitContainer spacesuitContainer;
     public FoodContainer foodContainer;
+    public ElectronicSelfRegulativeMachine electronicSelfRegulativeMachine = new ElectronicSelfRegulativeMachine();
+    public Room[] rooms = {new Room("Каюта1"), new Room("Каюта2"), new Room("Прихожая"), new Room("Кухня"), new Room("Отсек1"), new Room("Отсек2")};
+
+    public boolean isGnomeInRooms(String name){
+        class GnomeFinder{
+            public Gnome findGnomeByName(String name){
+                for (Room room:
+                        rooms) {
+                    if (room.findByGnomeName(name)!= null){
+                        return room.findByGnomeName(name);
+                    }
+                }
+                return null;
+            }
+        }
+        GnomeFinder gnomeFinder = new GnomeFinder();
+        return  gnomeFinder.findGnomeByName(name)!=null;
+
+
+    }
+
+    public class Room {
+        private String name;
+        private ArrayList<Gnome> gnomes = new ArrayList<>();
+
+        public Room(String name) {
+            this.name = name;
+        }
+
+        public void add(Gnome gnome) {
+            gnomes.add(gnome);
+        }
+
+        public void remove() {
+            gnomes.remove(gnomes.size() - 1);
+        }
+
+        public void transferToOtherRoom(Room other) {
+            other.add(gnomes.get(gnomes.size() - 1));
+            this.remove();
+        }
+
+        public Gnome findByGnomeName(String name) {
+            for (int i = 0; i < gnomes.size(); i++) {
+                if (gnomes.get(i).getName() == name) {
+                    Gnome g = gnomes.get(i);
+                    gnomes.remove(i);
+                    return g;
+                }
+
+            }
+            return null;
+        }
+    }
+
+
+    interface Breaks {
+        void toBreak();
+    }
+
+    public class ElectronicSelfRegulativeMachine {
+        public void activateBreaks() {
+            Breaks breaks = new Breaks() {
+                public void toBreak() {
+                    System.out.println("Идет торможение...");
+                }
+            };
+
+            breaks.toBreak();
+
+        }
+
+    }
+
 
     public Rocket(int x, int y, String name) {
         this(x, y, 100, name, 5);
@@ -30,12 +106,12 @@ public class Rocket extends Technic {
         this.capacity = capacity;
         this.crew = new ObjectWithCoordinates[capacity];
         this.crewFullness = 0;
-        this.spacesuitContainer = this.new SpacesuitContainer();
-        this.foodContainer = this.new FoodContainer();
+        this.spacesuitContainer = new SpacesuitContainer();
+        this.foodContainer = new FoodContainer();
 
     }
 
-    public class SpacesuitContainer {
+    public static class SpacesuitContainer {
         private ArrayList<Spacesuit> spacesuits = new ArrayList<Spacesuit>();
 
 
@@ -57,7 +133,7 @@ public class Rocket extends Technic {
 
     }
 
-    public class FoodContainer {
+    public static class FoodContainer {
         private ArrayList<Food> foods = new ArrayList<Food>();
 
 
