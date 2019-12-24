@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.company</OriginalElement>
+  <nodes>
+    <node x="449.89361778923376" y="1721.0">com.company.existences.Comandor</node>
+    <node x="1080.1960313273944" y="2172.0">com.company.existences.Gnome</node>
+    <node x="3308.5702297077814" y="1533.0">com.company.technics.Rocket</node>
+    <node x="4111.928145021547" y="1074.0">com.company.technics.Rocket.SpacesuitContainer</node>
+    <node x="10.5" y="3284.0">com.company.existences.Engineer</node>
+    <node x="3566.8031450215467" y="1108.0">com.company.technics.Rocket.ElectronicSelfRegulativeMachine</node>
+    <node x="1226.2329807270726" y="3679.0">com.company.Main</node>
+    <node x="1139.93908688295" y="1016.0">com.company.existences.Direction</node>
+    <node x="2447.453786047188" y="898.0">com.company.special.MapController</node>
+    <node x="2194.932180257232" y="2821.0">com.company.special.Squad</node>
+    <node x="2042.5133098567117" y="1755.0">com.company.existences.Movable</node>
+    <node x="4247.781539231591" y="509.0">com.company.items.Spacesuit</node>
+    <node x="3759.614872564924" y="497.0">com.company.items.Food</node>
+    <node x="895.1960313273944" y="2915.0">com.company.existences.Painter</node>
+    <node x="2580.015513590565" y="3202.0">com.company.existences.Astronomer</node>
+    <node x="3858.7406450215467" y="1052.0">com.company.technics.Rocket.FoodContainer</node>
+    <node x="3373.8031450215467" y="1086.0">com.company.technics.Technic</node>
+    <node x="2030.0869421619936" y="509.0">com.company.exceptions.CoordinatesOutOfMap</node>
+    <node x="2676.947023390887" y="439.0">com.company.special.ObjectWithCoordinates</node>
+    <node x="3008.828786047188" y="1016.0">com.company.technics.Rocket.Room</node>
+    <node x="1121.1960313273944" y="2915.0">com.company.existences.Architect</node>
+    <node x="1546.8696424385057" y="2903.0">com.company.existences.Doctor</node>
+    <node x="657.1960313273944" y="2915.0">com.company.existences.Musicion</node>
+    <node x="289.4999999999998" y="2915.0">com.company.existences.Mechanic</node>
+    <node x="1869.5990143369177" y="2949.0">com.company.existences.Researching</node>
+    <node x="3958.7815392315906" y="509.0">com.company.exceptions.GettingNotExistingItem</node>
+    <node x="1395.93908688295" y="992.0">com.company.existences.Existence</node>
+    <node x="991.93908688295" y="0.0">com.company.items.Item</node>
+    <node x="1314.1754032258063" y="3226.0">com.company.existences.Professor</node>
+    <node x="834.93908688295" y="1108.0">com.company.existences.Executor</node>
+    <node x="2393.161309105172" y="439.0">com.company.blocks.Tile</node>
+    <node x="3576.114872564924" y="531.0">com.company.technics.Rocket.Breaks</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.company.Main" target="com.company.exceptions.GettingNotExistingItem">
+      <point x="74.64516129032268" y="-27.5" />
+      <point x="1389.878142017395" y="3639.0" />
+      <point x="4390.428145021547" y="3639.0" />
+      <point x="4390.428145021547" y="848.0" />
+      <point x="4182.948205898258" y="848.0" />
+      <point x="89.66666666666697" y="49.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket.FoodContainer" target="com.company.exceptions.GettingNotExistingItem">
+      <point x="76.875" y="-83.5" />
+      <point x="4038.1156450215467" y="848.0" />
+      <point x="4003.6148725649236" y="848.0" />
+      <point x="-89.66666666666697" y="49.5" />
+    </edge>
+    <edge source="com.company.special.Squad" target="com.company.existences.Movable">
+      <point x="-41.75" y="-155.5" />
+      <point x="2320.182180257232" y="2691.0" />
+      <point x="2268.2633098567117" y="2691.0" />
+      <point x="75.25" y="27.5" />
+    </edge>
+    <edge source="com.company.existences.Gnome" target="com.company.existences.Movable">
+      <point x="108.69444444444434" y="-249.5" />
+      <point x="1339.3904757718387" y="2112.0" />
+      <point x="2117.7633098567117" y="2112.0" />
+      <point x="-75.25" y="27.5" />
+    </edge>
+    <edge source="com.company.existences.Gnome" target="com.company.technics.Rocket">
+      <point x="142.1388888888889" y="-249.5" />
+      <point x="1372.8349202162833" y="2132.0" />
+      <point x="3358.8702297077816" y="2132.0" />
+      <point x="-201.19999999999982" y="249.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket" target="com.company.special.ObjectWithCoordinates">
+      <point x="-23.95238095238119" y="-249.5" />
+      <point x="3536.1178487554002" y="1513.0" />
+      <point x="3545.3031450215467" y="1513.0" />
+      <point x="3545.3031450215467" y="708.0" />
+      <point x="2915.7931772370407" y="708.0" />
+      <point x="103.84615384615381" y="119.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.existences.Direction">
+      <point x="-86.1290322580644" y="-27.5" />
+      <point x="1229.1039484690082" y="3659.0" />
+      <point x="0.0" y="3659.0" />
+      <point x="0.0" y="2142.0" />
+      <point x="330.27249444452536" y="2142.0" />
+      <point x="330.27249444452536" y="1513.0" />
+      <point x="1169.43908688295" y="1513.0" />
+      <point x="-88.5" y="119.5" />
+    </edge>
+    <edge source="com.company.technics.Technic" target="com.company.special.ObjectWithCoordinates">
+      <point x="-40.25" y="-49.5" />
+      <point x="3414.0531450215467" y="728.0" />
+      <point x="2874.2547156985793" y="728.0" />
+      <point x="62.30769230769238" y="119.5" />
+    </edge>
+    <edge source="com.company.special.Squad" target="com.company.special.ObjectWithCoordinates">
+      <point x="97.41666666666652" y="-155.5" />
+      <point x="2459.3488469238987" y="2781.0" />
+      <point x="2876.953786047188" y="2781.0" />
+      <point x="2876.953786047188" y="818.0" />
+      <point x="2791.177792621656" y="818.0" />
+      <point x="-20.769230769230944" y="119.5" />
+    </edge>
+    <edge source="com.company.existences.Painter" target="com.company.existences.Gnome">
+      <point x="51.5" y="-61.5" />
+      <point x="1049.6960313273944" y="2791.0" />
+      <point x="1205.6126979940611" y="2791.0" />
+      <point x="-25.083333333333258" y="249.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.special.Squad">
+      <point x="22.9677419354839" y="-27.5" />
+      <point x="1338.2007226625565" y="3549.0" />
+      <point x="2436.8724554996115" y="3549.0" />
+      <point x="2436.8724554996115" y="3182.0" />
+      <point x="2278.432180257232" y="3182.0" />
+      <point x="-83.5" y="155.5" />
+    </edge>
+    <edge source="com.company.existences.Astronomer" target="com.company.special.ObjectWithCoordinates">
+      <point x="66.75" y="-143.5" />
+      <point x="2780.265513590565" y="3172.0" />
+      <point x="2965.328786047188" y="3172.0" />
+      <point x="2965.328786047188" y="2122.0" />
+      <point x="2998.328786047188" y="2122.0" />
+      <point x="2998.328786047188" y="798.0" />
+      <point x="2832.716254160118" y="798.0" />
+      <point x="20.769230769230944" y="119.5" />
+    </edge>
+    <edge source="com.company.special.MapController" target="com.company.special.ObjectWithCoordinates">
+      <point x="59.85714285714266" y="-237.5" />
+      <point x="2716.8109289043305" y="838.0" />
+      <point x="2728.870100313964" y="838.0" />
+      <point x="-83.07692307692287" y="119.5" />
+    </edge>
+    <edge source="com.company.existences.Gnome" target="com.company.special.MapController">
+      <point x="75.25" y="-249.5" />
+      <point x="1305.9460313273944" y="2092.0" />
+      <point x="1849.221643190045" y="2092.0" />
+      <point x="1849.221643190045" y="1473.0" />
+      <point x="2477.3823574757594" y="1473.0" />
+      <point x="-179.57142857142844" y="237.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket.SpacesuitContainer" target="com.company.items.Spacesuit">
+      <point x="33.5" y="-61.5" />
+      <point x="4279.428145021547" y="878.0" />
+      <point x="4314.864872564924" y="878.0" />
+      <point x="-13.41666666666697" y="49.5" />
+    </edge>
+    <edge source="com.company.existences.Professor" target="com.company.existences.Gnome">
+      <point x="0.0" y="-119.5" />
+      <point x="1438.6754032258063" y="3182.0" />
+      <point x="1361.6960313273944" y="3182.0" />
+      <point x="1361.6960313273944" y="2781.0" />
+      <point x="1272.50158688295" y="2781.0" />
+      <point x="41.80555555555566" y="249.5" />
+    </edge>
+    <edge source="com.company.special.Squad" target="com.company.exceptions.CoordinatesOutOfMap">
+      <point x="13.916666666666515" y="-155.5" />
+      <point x="2375.8488469238987" y="2801.0" />
+      <point x="2365.0133098567117" y="2801.0" />
+      <point x="2365.0133098567117" y="798.0" />
+      <point x="2161.5869421619936" y="798.0" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="com.company.existences.Comandor" target="com.company.existences.Gnome">
+      <point x="64.5" y="61.5" />
+      <point x="643.3936177892338" y="2132.0" />
+      <point x="1122.0015868829498" y="2132.0" />
+      <point x="-108.69444444444457" y="-249.5" />
+    </edge>
+    <edge source="com.company.items.Spacesuit" target="com.company.items.Item">
+      <point x="-40.25" y="-49.5" />
+      <point x="4288.031539231591" y="419.0" />
+      <point x="1156.1533725972358" y="419.0" />
+      <point x="59.71428571428578" y="189.5" />
+    </edge>
+    <edge source="com.company.existences.Architect" target="com.company.existences.Gnome">
+      <point x="-54.75" y="-61.5" />
+      <point x="1175.9460313273944" y="2801.0" />
+      <point x="1222.3349202162833" y="2801.0" />
+      <point x="-8.361111111111086" y="249.5" />
+    </edge>
+    <edge source="com.company.existences.Astronomer" target="com.company.existences.Researching">
+      <point x="-111.25" y="-143.5" />
+      <point x="2602.265513590565" y="3172.0" />
+      <point x="1982.8490143369177" y="3172.0" />
+      <point x="37.75" y="27.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.existences.Painter">
+      <point x="-17.225806451612925" y="-27.5" />
+      <point x="1298.0071742754594" y="3539.0" />
+      <point x="993.4173387096776" y="3539.0" />
+      <point x="993.4173387096776" y="3182.0" />
+      <point x="1049.6960313273944" y="3182.0" />
+      <point x="51.5" y="61.5" />
+    </edge>
+    <edge source="com.company.existences.Gnome" target="com.company.exceptions.CoordinatesOutOfMap">
+      <point x="-25.083333333333485" y="-249.5" />
+      <point x="1205.612697994061" y="2082.0" />
+      <point x="1118.43908688295" y="2082.0" />
+      <point x="1118.43908688295" y="798.0" />
+      <point x="2073.920275495327" y="798.0" />
+      <point x="-87.66666666666652" y="49.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket" target="com.company.technics.Rocket.ElectronicSelfRegulativeMachine">
+      <point x="23.952380952380736" y="-249.5" />
+      <point x="3584.022610660162" y="1423.0" />
+      <point x="3610.969811688213" y="1423.0" />
+      <point x="-88.33333333333348" y="27.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket" target="com.company.technics.Rocket.SpacesuitContainer">
+      <point x="215.57142857142844" y="-249.5" />
+      <point x="3775.64165827921" y="1503.0" />
+      <point x="4245.928145021547" y="1503.0" />
+      <point x="0.0" y="61.5" />
+    </edge>
+    <edge source="com.company.existences.Executor" target="com.company.existences.Gnome">
+      <point x="-31.375" y="27.5" />
+      <point x="929.06408688295" y="1503.0" />
+      <point x="954.93908688295" y="1503.0" />
+      <point x="954.93908688295" y="2122.0" />
+      <point x="1138.7238091051722" y="2122.0" />
+      <point x="-91.97222222222217" y="-249.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.existences.Astronomer">
+      <point x="40.193548387096826" y="-27.5" />
+      <point x="1355.4265291141692" y="3579.0" />
+      <point x="2780.265513590565" y="3579.0" />
+      <point x="66.75" y="143.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.existences.Engineer">
+      <point x="-80.38709677419365" y="-27.5" />
+      <point x="1234.845883952879" y="3649.0" />
+      <point x="75.0" y="3649.0" />
+      <point x="-64.5" y="61.5" />
+    </edge>
+    <edge source="com.company.special.Squad" target="com.company.existences.Direction">
+      <point x="-13.916666666666515" y="-155.5" />
+      <point x="2348.0155135905657" y="2801.0" />
+      <point x="2354.0133098567117" y="2801.0" />
+      <point x="2354.0133098567117" y="1433.0" />
+      <point x="1346.43908688295" y="1433.0" />
+      <point x="88.5" y="119.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket.FoodContainer" target="com.company.items.Food">
+      <point x="-76.875" y="-83.5" />
+      <point x="3884.3656450215467" y="818.0" />
+      <point x="3809.114872564924" y="818.0" />
+      <point x="-33.0" y="61.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.existences.Architect">
+      <point x="-5.741935483870975" y="-27.5" />
+      <point x="1309.4910452432014" y="3519.0" />
+      <point x="1222.6673387096776" y="3519.0" />
+      <point x="1222.6673387096776" y="3182.0" />
+      <point x="1285.4460313273944" y="3182.0" />
+      <point x="54.75" y="61.5" />
+    </edge>
+    <edge source="com.company.existences.Gnome" target="com.company.existences.Direction">
+      <point x="8.361111111111086" y="-249.5" />
+      <point x="1239.0571424385055" y="2152.0" />
+      <point x="1228.43908688295" y="2152.0" />
+      <point x="-29.5" y="119.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.items.Food">
+      <point x="68.9032258064517" y="-27.5" />
+      <point x="1384.1362065335243" y="3629.0" />
+      <point x="4074.2406450215467" y="3629.0" />
+      <point x="4074.2406450215467" y="788.0" />
+      <point x="3908.114872564924" y="788.0" />
+      <point x="66.0" y="61.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.items.Spacesuit">
+      <point x="86.1290322580644" y="-27.5" />
+      <point x="1401.362012985137" y="3659.0" />
+      <point x="4502.378413838751" y="3659.0" />
+      <point x="4502.378413838751" y="828.0" />
+      <point x="4395.364872564924" y="828.0" />
+      <point x="67.08333333333303" y="49.5" />
+    </edge>
+    <edge source="com.company.existences.Astronomer" target="com.company.special.MapController">
+      <point x="22.25" y="-143.5" />
+      <point x="2735.765513590565" y="3162.0" />
+      <point x="2910.28035672422" y="3162.0" />
+      <point x="2910.28035672422" y="1493.0" />
+      <point x="2656.953786047188" y="1493.0" />
+      <point x="0.0" y="237.5" />
+    </edge>
+    <edge source="com.company.special.MapController" target="com.company.blocks.Tile">
+      <point x="-59.85714285714312" y="-237.5" />
+      <point x="2597.0966431900447" y="768.0" />
+      <point x="2507.494642438506" y="768.0" />
+      <point x="16.333333333333485" y="119.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket.Room" target="com.company.technics.Rocket">
+      <point x="119.5833333333336" y="119.5" />
+      <point x="3271.9121193805213" y="1423.0" />
+      <point x="3416.3559439934957" y="1423.0" />
+      <point x="-143.71428571428578" y="-249.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket.Room" target="com.company.existences.Gnome">
+      <point x="-119.58333333333348" y="119.5" />
+      <point x="3032.7454527138543" y="1503.0" />
+      <point x="1871.221643190045" y="1503.0" />
+      <point x="1871.221643190045" y="2102.0" />
+      <point x="1322.6682535496166" y="2102.0" />
+      <point x="91.97222222222217" y="-249.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket.ElectronicSelfRegulativeMachine" target="com.company.technics.Rocket">
+      <point x="88.33333333333348" y="27.5" />
+      <point x="3787.63647835488" y="1443.0" />
+      <point x="3631.927372564924" y="1443.0" />
+      <point x="71.85714285714266" y="-249.5" />
+    </edge>
+    <edge source="com.company.existences.Astronomer" target="com.company.technics.Rocket">
+      <point x="111.25" y="-143.5" />
+      <point x="2824.765513590565" y="3182.0" />
+      <point x="2976.328786047188" y="3182.0" />
+      <point x="2976.328786047188" y="2152.0" />
+      <point x="3560.0702297077814" y="2152.0" />
+      <point x="0.0" y="249.5" />
+    </edge>
+    <edge source="com.company.existences.Gnome" target="com.company.existences.Existence">
+      <point x="25.083333333333258" y="-249.5" />
+      <point x="1255.7793646607277" y="2062.0" />
+      <point x="1364.43908688295" y="2062.0" />
+      <point x="1364.43908688295" y="1513.0" />
+      <point x="1430.772420216283" y="1513.0" />
+      <point x="-69.66666666666674" y="143.5" />
+    </edge>
+    <edge source="com.company.existences.Existence" target="com.company.special.ObjectWithCoordinates">
+      <point x="-69.66666666666674" y="-143.5" />
+      <point x="1430.772420216283" y="828.0" />
+      <point x="2687.331638775502" y="828.0" />
+      <point x="-124.61538461538476" y="119.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket.Breaks" target="com.company.technics.Rocket">
+      <point x="49.0" y="27.5" />
+      <point x="3698.614872564924" y="828.0" />
+      <point x="3842.3031450215467" y="828.0" />
+      <point x="3842.3031450215467" y="1453.0" />
+      <point x="3655.8797535173053" y="1453.0" />
+      <point x="95.80952380952385" y="-249.5" />
+    </edge>
+    <edge source="com.company.existences.Astronomer" target="com.company.existences.Gnome">
+      <point x="-66.75" y="-143.5" />
+      <point x="2646.765513590565" y="3162.0" />
+      <point x="2031.0990143369177" y="3162.0" />
+      <point x="2031.0990143369177" y="2751.0" />
+      <point x="1322.6682535496166" y="2751.0" />
+      <point x="91.97222222222217" y="249.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.existences.Doctor">
+      <point x="17.225806451612925" y="-27.5" />
+      <point x="1332.4587871786853" y="3539.0" />
+      <point x="1684.3409498207884" y="3539.0" />
+      <point x="1684.3409498207884" y="3172.0" />
+      <point x="1717.8696424385057" y="3172.0" />
+      <point x="57.0" y="73.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.existences.Professor">
+      <point x="5.741935483870975" y="-27.5" />
+      <point x="1320.9749162109433" y="3519.0" />
+      <point x="1500.9254032258063" y="3519.0" />
+      <point x="62.25" y="119.5" />
+    </edge>
+    <edge source="com.company.existences.Mechanic" target="com.company.items.Item">
+      <point x="-73.66666666666674" y="-61.5" />
+      <point x="326.33333333333303" y="2801.0" />
+      <point x="319.27249444452536" y="2801.0" />
+      <point x="319.27249444452536" y="419.0" />
+      <point x="1066.5819440258072" y="419.0" />
+      <point x="-29.85714285714289" y="189.5" />
+    </edge>
+    <edge source="com.company.existences.Gnome" target="com.company.existences.Comandor">
+      <point x="-142.1388888888889" y="-249.5" />
+      <point x="1088.5571424385055" y="2152.0" />
+      <point x="557.3936177892338" y="2152.0" />
+      <point x="-21.5" y="61.5" />
+    </edge>
+    <edge source="com.company.existences.Mechanic" target="com.company.existences.Gnome">
+      <point x="73.66666666666669" y="-61.5" />
+      <point x="473.6666666666665" y="2731.0" />
+      <point x="1105.2793646607277" y="2731.0" />
+      <point x="-125.41666666666674" y="249.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket" target="com.company.technics.Rocket.Room">
+      <point x="-215.5714285714289" y="-249.5" />
+      <point x="3344.4988011363525" y="1453.0" />
+      <point x="3128.4121193805213" y="1453.0" />
+      <point x="-23.916666666666515" y="119.5" />
+    </edge>
+    <edge source="com.company.special.Squad" target="com.company.existences.Comandor">
+      <point x="-97.41666666666652" y="-155.5" />
+      <point x="2264.5155135905657" y="2711.0" />
+      <point x="2021.0133098567117" y="2711.0" />
+      <point x="2021.0133098567117" y="2052.0" />
+      <point x="686.3936177892338" y="2052.0" />
+      <point x="107.5" y="61.5" />
+    </edge>
+    <edge source="com.company.existences.Doctor" target="com.company.existences.Gnome">
+      <point x="0.0" y="-73.5" />
+      <point x="1660.8696424385057" y="2761.0" />
+      <point x="1305.9460313273944" y="2761.0" />
+      <point x="75.25" y="249.5" />
+    </edge>
+    <edge source="com.company.existences.Movable" target="com.company.special.MapController">
+      <point x="75.25" y="-27.5" />
+      <point x="2268.2633098567117" y="1483.0" />
+      <point x="2537.239500332902" y="1483.0" />
+      <point x="-119.71428571428578" y="237.5" />
+    </edge>
+    <edge source="com.company.existences.Movable" target="com.company.existences.Direction">
+      <point x="-75.25" y="-27.5" />
+      <point x="2117.7633098567117" y="1443.0" />
+      <point x="1287.43908688295" y="1443.0" />
+      <point x="29.5" y="119.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket" target="com.company.blocks.Tile">
+      <point x="-119.76190476190504" y="-249.5" />
+      <point x="3440.3083249458764" y="1413.0" />
+      <point x="3306.328786047188" y="1413.0" />
+      <point x="3306.328786047188" y="748.0" />
+      <point x="2572.827975771839" y="748.0" />
+      <point x="81.66666666666652" y="119.5" />
+    </edge>
+    <edge source="com.company.existences.Gnome" target="com.company.items.Spacesuit">
+      <point x="58.52777777777783" y="-249.5" />
+      <point x="1289.2238091051722" y="2082.0" />
+      <point x="1838.221643190045" y="2082.0" />
+      <point x="1838.221643190045" y="858.0" />
+      <point x="4261.198205898258" y="858.0" />
+      <point x="-67.08333333333303" y="49.5" />
+    </edge>
+    <edge source="com.company.existences.Professor" target="com.company.existences.Researching">
+      <point x="83.0" y="-119.5" />
+      <point x="1521.6754032258063" y="3182.0" />
+      <point x="1907.3490143369177" y="3182.0" />
+      <point x="-37.75" y="27.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket.SpacesuitContainer" target="com.company.technics.Rocket">
+      <point x="89.33333333333303" y="61.5" />
+      <point x="4335.26147835488" y="1513.0" />
+      <point x="3799.594039231591" y="1513.0" />
+      <point x="239.52380952380963" y="-249.5" />
+    </edge>
+    <edge source="com.company.existences.Existence" target="com.company.items.Food">
+      <point x="69.66666666666674" y="-143.5" />
+      <point x="1570.1057535496166" y="848.0" />
+      <point x="3776.114872564924" y="848.0" />
+      <point x="-66.0" y="61.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket.SpacesuitContainer" target="com.company.exceptions.GettingNotExistingItem">
+      <point x="-100.5" y="-61.5" />
+      <point x="4145.428145021547" y="848.0" />
+      <point x="4093.2815392315906" y="848.0" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="com.company.existences.Engineer" target="com.company.existences.Mechanic">
+      <point x="96.75" y="-61.5" />
+      <point x="236.25" y="3182.0" />
+      <point x="372.3749999999998" y="3182.0" />
+      <point x="-27.625" y="61.5" />
+    </edge>
+    <edge source="com.company.existences.Comandor" target="com.company.existences.Executor">
+      <point x="0.0" y="-61.5" />
+      <point x="578.8936177892338" y="1503.0" />
+      <point x="866.31408688295" y="1503.0" />
+      <point x="-94.125" y="27.5" />
+    </edge>
+    <edge source="com.company.existences.Gnome" target="com.company.existences.Executor">
+      <point x="-75.25" y="-249.5" />
+      <point x="1155.4460313273944" y="2112.0" />
+      <point x="965.93908688295" y="2112.0" />
+      <point x="965.93908688295" y="1503.0" />
+      <point x="991.81408688295" y="1503.0" />
+      <point x="31.375" y="27.5" />
+    </edge>
+    <edge source="com.company.special.MapController" target="com.company.exceptions.CoordinatesOutOfMap">
+      <point x="-179.57142857142844" y="-237.5" />
+      <point x="2477.3823574757594" y="788.0" />
+      <point x="2249.25360882866" y="788.0" />
+      <point x="87.66666666666652" y="49.5" />
+    </edge>
+    <edge source="com.company.existences.Musicion" target="com.company.existences.Gnome">
+      <point x="54.5" y="-61.5" />
+      <point x="820.6960313273944" y="2771.0" />
+      <point x="1172.1682535496166" y="2771.0" />
+      <point x="-58.52777777777783" y="249.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.existences.Mechanic">
+      <point x="-63.1612903225805" y="-27.5" />
+      <point x="1252.071690404492" y="3619.0" />
+      <point x="427.6249999999998" y="3619.0" />
+      <point x="27.625" y="61.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket" target="com.company.special.MapController">
+      <point x="-239.52380952380963" y="-249.5" />
+      <point x="3320.546420183972" y="1463.0" />
+      <point x="2836.5252146186162" y="1463.0" />
+      <point x="179.57142857142844" y="237.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.existences.Musicion">
+      <point x="-34.45161290322585" y="-27.5" />
+      <point x="1280.7813678238467" y="3569.0" />
+      <point x="752.6754032258063" y="3569.0" />
+      <point x="752.6754032258063" y="3182.0" />
+      <point x="711.6960313273944" y="3182.0" />
+      <point x="-54.5" y="61.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.existences.Comandor">
+      <point x="-51.67741935483855" y="-27.5" />
+      <point x="1263.555561372234" y="3599.0" />
+      <point x="520.9999999999998" y="3599.0" />
+      <point x="520.9999999999998" y="2152.0" />
+      <point x="514.3936177892338" y="2152.0" />
+      <point x="-64.5" y="61.5" />
+    </edge>
+    <edge source="com.company.special.Squad" target="com.company.special.MapController">
+      <point x="69.58333333333348" y="-155.5" />
+      <point x="2431.5155135905657" y="2771.0" />
+      <point x="2525.5065472004108" y="2771.0" />
+      <point x="2525.5065472004108" y="1493.0" />
+      <point x="2597.096643190045" y="1493.0" />
+      <point x="-59.85714285714266" y="237.5" />
+    </edge>
+    <edge source="com.company.special.Squad" target="com.company.existences.Gnome">
+      <point x="-125.25" y="-155.5" />
+      <point x="2236.682180257232" y="2721.0" />
+      <point x="1372.8349202162833" y="2721.0" />
+      <point x="142.1388888888889" y="249.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.special.MapController">
+      <point x="45.9354838709678" y="-27.5" />
+      <point x="1361.1684645980404" y="3589.0" />
+      <point x="2987.328786047188" y="3589.0" />
+      <point x="2987.328786047188" y="1483.0" />
+      <point x="2716.810928904331" y="1483.0" />
+      <point x="59.85714285714312" y="237.5" />
+    </edge>
+    <edge source="com.company.existences.Gnome" target="com.company.items.Item">
+      <point x="-58.52777777777783" y="-249.5" />
+      <point x="1172.1682535496166" y="2102.0" />
+      <point x="1096.43908688295" y="2102.0" />
+      <point x="0.0" y="189.5" />
+    </edge>
+    <edge source="com.company.existences.Engineer" target="com.company.items.Item">
+      <point x="-32.25" y="-61.5" />
+      <point x="107.25" y="3182.0" />
+      <point x="80.5" y="3182.0" />
+      <point x="80.5" y="409.0" />
+      <point x="1036.7248011686643" y="409.0" />
+      <point x="-59.71428571428578" y="189.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.existences.Gnome">
+      <point x="-40.1935483870966" y="-27.5" />
+      <point x="1275.039432339976" y="3579.0" />
+      <point x="646.6960313273944" y="3579.0" />
+      <point x="646.6960313273944" y="2751.0" />
+      <point x="1138.7238091051722" y="2751.0" />
+      <point x="-91.97222222222217" y="249.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket" target="com.company.technics.Rocket.FoodContainer">
+      <point x="143.71428571428578" y="-249.5" />
+      <point x="3703.784515422067" y="1473.0" />
+      <point x="3961.2406450215467" y="1473.0" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="com.company.special.Squad" target="com.company.existences.Executor">
+      <point x="-69.58333333333303" y="-155.5" />
+      <point x="2292.348846923899" y="2701.0" />
+      <point x="2032.0133098567117" y="2701.0" />
+      <point x="2032.0133098567117" y="1453.0" />
+      <point x="1054.56408688295" y="1453.0" />
+      <point x="94.125" y="27.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.technics.Rocket">
+      <point x="63.161290322580726" y="-27.5" />
+      <point x="1378.394271049653" y="3619.0" />
+      <point x="3773.7387499578413" y="3619.0" />
+      <point x="3773.7387499578413" y="2142.0" />
+      <point x="3761.2702297077813" y="2142.0" />
+      <point x="201.19999999999982" y="249.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket.ElectronicSelfRegulativeMachine" target="com.company.technics.Rocket.Breaks">
+      <point x="66.24999999999955" y="-27.5" />
+      <point x="3765.5531450215462" y="838.0" />
+      <point x="3649.614872564924" y="838.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket" target="com.company.technics.Technic">
+      <point x="-47.904761904761926" y="-249.5" />
+      <point x="3512.1654678030195" y="1513.0" />
+      <point x="3494.5531450215467" y="1513.0" />
+      <point x="40.25" y="49.5" />
+    </edge>
+    <edge source="com.company.special.Squad" target="com.company.technics.Rocket">
+      <point x="153.08333333333348" y="-155.5" />
+      <point x="2515.0155135905657" y="2801.0" />
+      <point x="2898.953786047188" y="2801.0" />
+      <point x="2898.953786047188" y="2142.0" />
+      <point x="3459.4702297077815" y="2142.0" />
+      <point x="-100.59999999999991" y="249.5" />
+    </edge>
+    <edge source="com.company.existences.Doctor" target="com.company.existences.Existence">
+      <point x="76.0" y="-73.5" />
+      <point x="1736.8696424385057" y="2801.0" />
+      <point x="1860.221643190045" y="2801.0" />
+      <point x="1860.221643190045" y="1463.0" />
+      <point x="1570.1057535496166" y="1463.0" />
+      <point x="69.66666666666674" y="143.5" />
+    </edge>
+    <edge source="com.company.special.Squad" target="com.company.blocks.Tile">
+      <point x="41.75" y="-155.5" />
+      <point x="2403.682180257232" y="2791.0" />
+      <point x="2376.0133098567117" y="2791.0" />
+      <point x="2376.0133098567117" y="818.0" />
+      <point x="2442.161309105172" y="818.0" />
+      <point x="-49.0" y="119.5" />
+    </edge>
+    <edge source="com.company.technics.Rocket.FoodContainer" target="com.company.technics.Rocket">
+      <point x="68.33333333333348" y="83.5" />
+      <point x="4029.57397835488" y="1483.0" />
+      <point x="3727.736896374448" y="1483.0" />
+      <point x="167.66666666666652" y="-249.5" />
+    </edge>
+    <edge source="com.company.existences.Gnome" target="com.company.blocks.Tile">
+      <point x="-8.361111111111086" y="-249.5" />
+      <point x="1222.3349202162833" y="2072.0" />
+      <point x="1129.43908688295" y="2072.0" />
+      <point x="1129.43908688295" y="808.0" />
+      <point x="2409.494642438506" y="808.0" />
+      <point x="-81.66666666666652" y="119.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.30000000000000004" x="2002.9999999999995" y="1961.6666666666665" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
